@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    use HasFactory;
+
     protected $fillable = [
         'nama',
         'alamat',
@@ -34,11 +36,13 @@ class User extends Authenticatable
         ];
     }
 
-    public function poli(){
+    public function poli()
+    {
         return $this->belongsTo(Poli::class, 'id_poli');
     }
 
-    public function jadwalPeriksas(){
+    public function jadwalPeriksas()
+    {
         return $this->hasMany(JadwalPeriksa::class, 'id_dokter');
     }
 }
