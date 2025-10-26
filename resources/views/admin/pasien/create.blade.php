@@ -2,19 +2,19 @@
     <div class="container-fluid px-4 mt-4">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <h1 class="mb-4">Tambah dokter</h1>
+                <h1 class="mb-4">Tambah pasien</h1>
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('dokter.store') }}" method="POST">
+                        <form action="{{ route('pasien.store') }}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
-                                        <label for="nama" class="form-label">Nama Dokter <span class="text-danger">*</span></label>
+                                        <label for="nama" class="form-label">Nama Pasien <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama"
                                             name="nama" value="{{ old('nama') }}" required>
                                         @error('nama')
-                                        <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -24,7 +24,7 @@
                                         <input type="email" class="form-control @error('email') is-invalid @enderror"
                                             id="email" name="email" value="{{ old('email') }}" required>
                                         @error('email')
-                                        <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -37,7 +37,7 @@
                                         <input type="number" class="form-control @error('no_ktp') is-invalid @enderror"
                                             id="no_ktp" name="no_ktp" value="{{ old('no_ktp') }}" required>
                                         @error('no_ktp')
-                                        <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                         <input type="number" class="form-control @error('no_hp') is-invalid @enderror"
                                             id="no_hp" name="no_hp" value="{{ old('no_hp') }}" required>
                                         @error('no_hp')
-                                        <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -58,22 +58,7 @@
                                 <textarea required name="alamat" id="alamat"
                                     class="form-control @error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
                                 @error('alamat')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="id_poli" class="form-label">Poli <span class="text-danger">*</span></label>
-                                <select name="id_poli" id="id_poli" class="form-control @error('id_poli') is-invalid @enderror" required>
-                                    <option value="" selected>Pilih Poli</option>
-                                    @foreach ($polis as $poli)
-                                    <option value="{{ $poli->id }}" {{ old('id_poli') == $poli->id ? 'selected' : '' }}>
-                                        {{ $poli->nama_poli }}
-                                    </option>
-                                    @endforeach
-                                </select>
-                                @error('id_poli')
-                                <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -83,7 +68,7 @@
                                     class="form-control @error('password') is-invalid @enderror" required>
                                 <small class="form-text text-muted">Minimal 8 karakter.</small>
                                 @error('password')
-                                <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -91,7 +76,7 @@
                                 <button type="submit" class="btn btn-success">
                                     <i class="fas fa-save"></i> Simpan
                                 </button>
-                                <a href="{{ route('dokter.index') }}" class="btn btn-secondary">Batal</a>
+                                <a href="{{ route('pasien.index') }}" class="btn btn-secondary">Batal</a>
                             </div>
                         </form>
                     </div>
