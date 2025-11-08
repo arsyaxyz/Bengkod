@@ -1,4 +1,4 @@
-<x-layouts.app title="Data Dokter">
+<x-layouts.app title="Jadwal Periksa">
     <div class="container-fluid px-4 mt-4">
         <div class="row">
             <div class="col-lg-12">
@@ -11,40 +11,42 @@
                     </div>
                 @endif
 
-                <h1 class="mb-4">Data Dokter</h1>
+                <h1 class="mb-4">Jadwal Periksa</h1>
 
-                <a href="{{ route('dokter.create') }}" class="btn btn-primary mb-3">
-                    <i class="fas fa-plus"></i> Tambah Dokter
+                <a href="{{ route('jadwal-periksa.create') }}" class="btn btn-primary mb-3">
+                    <i class="fas fa-plus"></i> Tambah Jadwal Periksa
                 </a>
 
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead class="thead-light">
                             <tr>
-                                <th width="5%">No</th>
-                                <th>Nama Dokter</th>
-                                <th>Poli</th>
-                                <th width="20%">Aksi</th>
+                                <th>ID</th>
+                                <th>Hari</th>
+                                <th>Jam Mulai</th>
+                                <th>Jam Selesai</th>
+                                <th style="width: 150px;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($dokter as $dokter)
+                            @forelse ($jadwalPeriksas as $jadwalPeriksa)
                                 <tr>
-                                    <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td>{{ $dokter->nama }}</td>
+                                    <td>{{ $jadwalPeriksa->id }}</td>
+                                    <td>{{ $jadwalPeriksa->hari }}</td>
+                                    {{-- - format('H:i') akan menampilkan waktu dalam format 24 jam, misalnya 14:30. --}}
+                                    <td>{{ \Carbon\Carbon::parse($jadwalPeriksa->jam_mulai)->format('H:i') }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($jadwalPeriksa->jam_selesai)->format('H:i') }}</td>
                                     <td>
-                                        <span class="badge bg-info">
-                                            {{ $dokter->poli->nama_poli ?? 'Belum Dipilih' }}
-                                        </span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="{{ route('dokter.edit', $dokter->id) }}" class="btn btn-sm btn-warning">
-                                            <i class="fas fa-edit"></i> Edit
+                                        <a href="{{ route('jadwal-periksa.edit', $jadwalPeriksa->id) }}"
+                                            class="btn btn-sm btn-warning">
+                                            <i class="fas fa-edit"></i>Edit
                                         </a>
-                                        <form action="{{ route('dokter.destroy', $dokter->id) }}" method="POST" style="display: inline-block;">
+                                        <form action="{{ route('jadwal-periksa.destroy', $jadwalPeriksa->id) }}"
+                                            method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus dokter ini?')">
+                                            <button class="btn btn-sm btn-danger"
+                                                onclick="return confirm('Yakin ingin menghapus Data Jadwal Periksa ini ?')">
                                                 <i class="fas fa-trash"></i> Hapus
                                             </button>
                                         </form>
@@ -52,8 +54,8 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td class="text-center" colspan="4">
-                                        Belum ada dokter.
+                                    <td class="text-center" colspan="7">
+                                        Belum ada Jadwal Periksa
                                     </td>
                                 </tr>
                             @endforelse
@@ -74,4 +76,5 @@
             }
         }, 2000);
     </script>
+
 </x-layouts.app>

@@ -1,4 +1,3 @@
-sidebar.blade.php
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
@@ -104,24 +103,6 @@ sidebar.blade.php
                             <i class="nav-icon fas fa-calendar-check"></i>
                             <p>
                                 Jadwal Periksa
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('periksa-pasien.index') }}"
-                            class="nav-link {{ request()->routeIs('periksa-pasien.*') ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-stethoscope"></i>
-                            <p>
-                                Periksa Pasien
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('riwayat-pasien.index') }}"
-                            class="nav-link {{ request()->routeIs('riwayat-pasien[].*') ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-history"></i>
-                            <p>
-                                Riwayat Pasien
                             </p>
                         </a>
                     </li>
