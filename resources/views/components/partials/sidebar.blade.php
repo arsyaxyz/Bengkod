@@ -97,12 +97,34 @@
                             </p>
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a href="{{ route('jadwal-periksa.index') }}"
                             class="nav-link {{ request()->routeIs('jadwal-periksa.*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-calendar-check"></i>
                             <p>
                                 Jadwal Periksa
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('periksa-pasien.index') }}"
+                            class="nav-link {{ request()->routeIs('periksa-pasien.*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-stethoscope"></i>
+                            <p>
+                                Periksa Pasien
+                            </p>
+                        </a>
+                    </li>
+
+                    {{-- TAMBAHAN SESUAI SCREENSHOT --}}
+                    <li class="nav-item">
+                        <a href="{{ route('dokter.riwayat-pasien.index') }}"
+                           class="nav-link {{ request()->routeIs('dokter.riwayat-pasien.*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-history"></i>
+                            <p>
+                                Riwayat Pasien
                             </p>
                         </a>
                     </li>
@@ -119,9 +141,5 @@
                 </li>
             </ul>
         </nav>
-        {{-- <form method="POST" action="/logout" class="btn btn-danger ml-4">
-            @csrf
-            <button>Keluar</button>
-        </form> --}}
     </div>
 </aside>
