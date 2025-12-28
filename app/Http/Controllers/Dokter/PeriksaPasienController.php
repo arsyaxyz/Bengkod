@@ -57,7 +57,7 @@ class PeriksaPasienController extends Controller
         }
 
         return redirect()
-            ->route('periksa-pasien.index')
+            ->route('dokter.periksa-pasien.index')
             ->with('success', 'Data periksa berhasil disimpan.');
     }
 }

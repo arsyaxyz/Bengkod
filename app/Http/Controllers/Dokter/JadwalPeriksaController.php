@@ -13,9 +13,9 @@ class JadwalPeriksaController extends Controller
         // 1. Ambil user dari auth
         $dokter = Auth::user();
         // 2. ambil id_dokter ambil hanya hari
-        $jadwalPeriksas = JadwalPeriksa::where('id_dokter', $dokter->id)->orderBy('hari')->get();
+        $jadwalPeriksa = JadwalPeriksa::where('id_dokter', $dokter->id)->orderBy('hari')->get();
         // 3. return
-        return view('dokter.jadwal-periksa.index', compact('jadwalPeriksas'));
+        return view('dokter.jadwal-periksa.index', compact('jadwalPeriksa'));
     }
 
     public function create(){

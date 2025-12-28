@@ -4,7 +4,7 @@
             <div class="col-lg-8 offset-lg-2">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2>Detail Riwayat</h2>
-                    <a href="{{ route('riwayat-pasien.index') }}" class="btn btn-secondary">
+                    <a href="{{ route('dokter.riwayat-pasien.index') }}" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Kembali
                     </a>
                 </div>

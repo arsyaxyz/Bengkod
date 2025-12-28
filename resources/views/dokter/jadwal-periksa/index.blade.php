@@ -29,7 +29,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($jadwalPeriksas as $jadwalPeriksa)
+                            @forelse ($jadwalPeriksa as $jadwalPeriksa)
                                 <tr>
                                     <td>{{ $jadwalPeriksa->id }}</td>
                                     <td>{{ $jadwalPeriksa->hari }}</td>

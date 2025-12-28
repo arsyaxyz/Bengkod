@@ -1,3 +1,4 @@
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
@@ -97,7 +98,6 @@
                             </p>
                         </a>
                     </li>
-
                     <li class="nav-item">
                         <a href="{{ route('jadwal-periksa.index') }}"
                             class="nav-link {{ request()->routeIs('jadwal-periksa.*') ? 'active' : '' }}">
@@ -107,7 +107,6 @@
                             </p>
                         </a>
                     </li>
-
                     <li class="nav-item">
                         <a href="{{ route('periksa-pasien.index') }}"
                             class="nav-link {{ request()->routeIs('periksa-pasien.*') ? 'active' : '' }}">
@@ -117,11 +116,9 @@
                             </p>
                         </a>
                     </li>
-
-                    {{-- TAMBAHAN SESUAI SCREENSHOT --}}
                     <li class="nav-item">
                         <a href="{{ route('dokter.riwayat-pasien.index') }}"
-                           class="nav-link {{ request()->routeIs('dokter.riwayat-pasien.*') ? 'active' : '' }}">
+                            class="nav-link {{ request()->routeIs('dokter.riwayat-pasien.*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-history"></i>
                             <p>
                                 Riwayat Pasien
@@ -141,5 +138,9 @@
                 </li>
             </ul>
         </nav>
+        {{-- <form method="POST" action="/logout" class="btn btn-danger ml-4">
+            @csrf
+            <button>Keluar</button>
+        </form> --}}
     </div>
 </aside>

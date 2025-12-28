@@ -27,7 +27,7 @@
                                             <td>{{ \Carbon\Carbon::parse($riwayat->tgl_periksa)->format('d/m/Y') }}</td>
                                             <td>Rp {{ number_format($riwayat->biaya_periksa, 0, ',', '.') }}</td>
                                             <td>
-                                                <a href="{{ route('riwayat-pasien.show', $riwayat) }}"
+                                                <a href="{{ route('dokter.riwayat-pasien.show', $riwayat) }}"
                                                     class="btn btn-info btn-sm">
                                                     <i class="fas fa-eye"></i> Detail
                                                 </a>
