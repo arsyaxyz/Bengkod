@@ -11,7 +11,8 @@ class Obat extends Model
     protected $fillable = [
         'nama_obat',
         'kemasan',
-        'harga'
+        'harga',
+        'stok'
     ];
 
     public function detailPeriksas(){
