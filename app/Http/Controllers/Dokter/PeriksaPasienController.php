@@ -99,7 +99,7 @@ class PeriksaPasienController extends Controller
             DB::commit();
 
             return redirect()
-                ->route('dokter.periksa-pasien.index')
+                ->route('periksa-pasien.index')
                 ->with('success', 'Data periksa berhasil disimpan. Stok obat otomatis berkurang.');
 
         } catch (\Exception $e) {
